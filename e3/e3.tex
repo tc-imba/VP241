@@ -1,0 +1,406 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{booktabs}
+
+\begin{document}
+
+\vspace*{0.25cm}
+
+\hrulefill
+
+\thispagestyle{empty}
+
+\begin{center}
+\begin{large}
+\sc{UM--SJTU Joint Institute \vspace{0.3em} \\ Physics Laboratory \\(VP241)}
+\end{large}
+
+\hrulefill
+
+\vspace*{5cm}
+\begin{Large}
+\sc{{Laboratory Report}}
+\end{Large}
+
+\vspace{2em}
+
+\begin{large}
+\sc{{Exercise 3
+\vspace{0.5em}
+
+Solar Cells: I-V Characteristics
+}}
+\end{large}
+\end{center}
+
+
+\vfill
+
+\begin{table}[h!]
+\flushleft
+\begin{tabular}{lll}
+Name: Yihao Liu \hspace*{2em}&
+ID: 515370910207\hspace*{2em}\\
+Name: Guangzheng Wu \hspace*{2em}&
+ID: 515370910175\hspace*{2em}& Group: 7\\
+
+
+\\
+
+Date: 4 Nov 2016 
+
+\end{tabular}
+\end{table}
+
+\hfill
+\begin{tiny}
+[rev. 1.0]
+\end{tiny}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Objectives}
+
+The objective of this exercise is to get familiar with the working principle of a solar
+cell and study its current-voltage (I-V) characteristics.
+
+\section{Theoretical Background}
+
+Solar cells are devices which are able to directly transform solar radiation into electrical
+energy. They have many advantages such as no consumption of energy, silent operation,
+no moving parts, and a long lifetime. Moreover, solar cells are easy to maintain and
+they do not contribute to air pollution. Therefore, solar cells are regarded as a promising
+energy source in the 21st century and it is estimated that by the mid-21st century solar cells
+will produce 15-20\% of the total electrical energy generated in the world, and therefore
+become one of the leading energy sources.
+
+\subsection{Solar Cell Structure}
+
+As an example, the structure of a crystalline silicon solar cell is shown in Figure 1. It
+consists of $n/\rho$ homo-junctions, a 10 cm $\times$ 10 cm p{type silicon plate of thickness 500 $\mu$m,
+covered with a heavily doped n-type layer with thickness 0.3$\mu$m. The metallic bars on
+the n-type layer serve as one electrode, with a metallic film at the bottom playing the role
+of another one. In order to reduce the loss of energy due to reflection, an anti-reflective film is often applied to cover the surface exposed to sunlight.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{fig1.png}
+	\caption{Structure of a crystalline silicon solar cell.}
+\end{figure}
+
+\subsection{Photovoltaic Effect}
+
+When the light enters the p-n junction near the solar cell surface, and the energy of
+incident photons is greater than the forbidden bandwidth (energy gap) $E_g$, the incident
+photons are absorbed and excite electron-hole pairs. Minority charge carriers in the n- or
+p-type area diffuse due to their density gradient. Some of them are able to diffuse to the
+region of the p-n junction where a built-in electric field exists. This field is directed from
+the n-type to the p-type area. The minority carriers diffusing to the p-n junction zone
+between the n-type area and the p-type area are drawn by this electric field to the p-type
+area (in case of the holes), or to the n-type area (in case of the electrons). This results in
+an increase of positive charge accumulated in the p-type area and negative charge in the
+n-type area. Consequently, a photoelectric potential difference is generated.\\
+
+The phenomenon described above is known as the photovoltaic effect.
+
+\subsection{Solar Cell Parameters}
+
+Relying on the photovoltaic effect, solar cells can generate an electric current $I_ph$ from
+the n-type area to the p-area when there is light incident on the solar cell.
+At the same time, in the device there exists a forward diode current ID from the p-type
+to the n-type area, opposite to $I_ph$. Eventually, the net current is
+
+\begin{equation}
+I=I_{ph}-I_D=I_{ph}-I_0\left[exp\left(\frac{qV_D}{nk_BT}\right)-1\right]
+\label{eq-1}
+\end{equation}
+
+where $V_D$ is the junction voltage, I0 is the diode inverse saturation current, $I_ph$ is the photocurrent determined by the structure and material characteristics of the solar cell. The coefficient n is a theoretical coefficient, with its values ranging from 1 to 2, that characterizes the p-n junction. Furthermore, $q$ denotes the electron's charge, $k_B$ is the Boltzmann's constant, and $T$ is the temperature in the absolute (Kelvin) scale. Ignoring the internal series resistance $R_s$, the voltage $V_D$ equals the terminal voltage $V$ and Eq.(\ref{eq-1}) can be rewritten as
+
+$$I=I_{ph}-I_0\left[exp\left(\frac{qV}{nk_BT}\right)-1\right]$$
+
+When the output is short, $i.e.$ $V = 0$, the short-circuit current is
+
+$$I_{sc}=I_{ph}$$
+
+whereas when the output is open, $i.e.$ $I = 0$, the open-circuit voltage is
+
+$$V_{oc}=\frac{nk_bT}{q}\ln\left(\frac{I_{sc}}{I_0}+1\right)$$
+
+When there is a load resistance $R$ (with the value of $R$ ranging from zero to infinity),
+the corresponding I-V characteristics curve is shown in Figure 2. If for a certain load
+resistance $R = R_m$ the maximum output power $P_m$ is generated, then the value of $P_m$ is
+
+$$P_m=I_mV_m$$
+
+where $I_m$ is the optimal operating current, and $V_m$ is the optimal operating voltage. Then,
+
+$$FF=\frac{P_m}{V_{oc}I_{sc}}=\frac{V_mI_m}{V_{oc}I_{sc}}$$
+
+The quantity $FF$ is an important parameter of solar cells called the fill factor. The greater
+the fill factor is, the greater the output power. The fill factor is determined by a number
+of parameters, such as the incident light intensity, the forbidden bandwidth, the value of
+the theoretical coefficient $n$, and the series/parallel resistance.
+
+The solar cell energy conversion efficiency $\eta$ is defined as
+
+$\eta=\frac{P_m}{P_{in}}\times 100\%$
+
+where $P_{in}$ denotes the total radiant power incident on the solar cell.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{fig2.png}
+	\caption{The current-voltage characteristics of a solar cell.}
+\end{figure}
+
+\subsection{Solar Cell Equivalent Circuit}
+
+As shown in Figure 3, a solar cell can be thought of as composed of a p-n junction
+diode $D$ and a constant current source $I_{ph}$. Along with a series resistance $R_s$ due to
+the electrodes in the solar cell and a parallel resistance $R_{sh}$, all elements form a circuit
+equivalent to a p-n junction leak-circuit. For the equivalent circuit one can find the
+following relationship between the current and the voltage
+
+$$I=I_{ph}-I_0\left\lbrace exp\left[\frac{q(V+R_sI)}{nk_BT}\right]-1\right\rbrace-\frac{V+R_sI}{R_{sh}}$$
+
+In order to provide a greater output power, the value of $R_s$ should be decreased, while $R_{sh}$ increased.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{fig3.png}
+	\caption{Solar cell equivalent circuit.}
+\end{figure}
+
+
+\section{Measurement Setup and Procedure}
+
+\subsection{Measurement Setup}
+The setup consists of a photovoltaic device (5 W), a 300 W tungsten{halogen lamp
+serving as a radiation source, two digital multimeters, two adjustable resistors, a solar power meter, a wiring board and a measuring tape.
+
+\subsection{Measurement Procedure and Data Presentation}
+
+\begin{enumerate}
+\item
+Turn on both the light and the fan. Wait for at least five minutes, in order to let
+the light reach its working intensity.
+\item
+Design a measuring circuit with the photovoltaic device, multimeters set in an appropriate range, and the resistance. Connect the elements into a circuit using the
+provided wiring board.
+\item
+Change the resistance, measure the relevant current and voltage to draw the I-V
+characteristics curve. Keep the distance between the light source and the photo-
+voltaic device and do not move around the workstation during the measurement, to
+ensure the same light intensity is maintained during the whole process.
+\item
+Measure the I-V characteristics curves and the values of $V_{oc}$ and $I_{sc}$ under each of the following conditions:
+\begin{enumerate}[(a)]
+\item
+The distance between the light source and the photovoltaic device is 100 cm;
+Measure the solar power by the provided solar power meter.
+\item
+The distance between the light source and the photovoltaic device is 120 cm;
+Measure the solar power by the provided solar power meter.
+\item
+The distance between the light source and the photovoltaic device is 120 cm,
+with two devices in series.
+\item
+The distance between the light source and the photovoltaic device is 120 cm,
+with two devices in parallel.
+\end{enumerate}
+\item
+Plot (use a computer)
+\begin{enumerate}[(a)]
+\item
+the I-V characteristics curves;
+\item
+the graph of the output power vs. the voltage. Determine the values of
+$I_{sc}$, $V_{oc}$, $P_m$, $I_m$, $V_m$, $R_m$, $FF$, and $\eta$. Compile the data in the form of a table.
+\end{enumerate}
+\end{enumerate}
+
+
+\section{Results}
+
+The multimeter precision was shown in Table \ref{tab-1}.
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+QUANTITY & PRECISION \\
+\hline
+DC voltage & $0.5\%+\Delta$ [V]\\
+\hline
+DC current & $1.5\%+\Delta$ [mA]\\
+\hline
+distance & $0.1$ [cm]\\
+\hline
+solar power & $10$ [$\rm W/m^2$]\\
+\hline
+\end{tabular}
+\caption{Multimeter precision.}
+\label{tab-1}
+\end{center}
+\end{table}
+
+The measurement data for area was shown in Table \ref{tab-2}.
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+length [cm] & width [cm] \\
+\hline
+21.0 & 26.0 \\
+\hline
+\end{tabular}
+\caption{Measurement data for area.}
+\label{tab-2}
+\end{center}
+\end{table}
+
+$$S=21\times26=546.0\pm3.3\,\rm cm^2$$
+
+The measurement data for solar power was shown in Table \ref{tab-3}.
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& 0 & 1 & 2 & 3 & 4 \\
+\hline
+$P_{100}$ [$\rm W/m^2$] & 270 & 324 & 439 & 499 & 532 \\
+\hline
+$P_{120}$ [$\rm W/m^2$] & 203 & 257 & 334 & 381 & 406 \\
+\hline
+\end{tabular}
+\caption{Measurement data for solar power.}
+\label{tab-3}
+\end{center}
+\end{table}
+
+$$P_{100}=\frac{270+324+439+499+532}{5}=412.6\pm10.0 \,\rm W/m^2$$
+$$P_{in}=22.52\pm0.56\,\rm W$$
+$$P_{120}=\frac{203+257+334+381+406}{5}=316.2\pm10.0 \,\rm W/m^2$$
+$$P_{in}=17.26\pm0.56\,\rm W$$
+
+
+The measurement data for $U_{oc}$ and $I_{sc}$ was shown in Table \ref{tab-4}.
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+& 100 cm & 120 cm & series & parallel \\
+\hline
+$U_{oc}$ [V] & 9.98 & 9.66 & 19.10 & 9.55\\
+\hline
+$I_{sc}$ [mA] & 105.2 & 84.4 & 92.3 & 184.0 \\
+\hline
+\end{tabular}
+\caption{Measurement data for $U_{oc}$ and $I_{sc}$.}
+\label{tab-4}
+\end{center}
+\end{table}
+
+\newpage
+
+\input{result}
+
+\newpage
+
+\section{Measurement uncertainty analysis}
+
+$S$ can be calculated by the equation $S=ab$. Therefore its uncertainty $u_S$ is found by applying the uncertainty propagation formula
+
+\begin{align*}
+u_S&=\sqrt{\left(\frac{\partial S}{\partial a}\right)^2u_a^2+\left(\frac{\partial S}{\partial b}\right)^2u_{b}^2}\\
+&=\sqrt{b^2u_a^2+a^2u_b^2}\\
+&=3.3\,\rm cm^2
+\end{align*}
+
+$$S=546.0\pm3.3\,\rm cm^2$$
+
+$P_{in}$ can be calculated by the equation $P_{in}=P_xS$. Therefore its uncertainty $u_P$ is found by applying the uncertainty propagation formula
+
+\begin{align*}
+u_P&=\sqrt{\left(\frac{\partial P}{\partial P_x}\right)^2u_{P_x}^2+\left(\frac{\partial P}{\partial S}\right)^2u_{S}^2}\\
+&=\sqrt{S^2u_{P_x}^2+P_x^2u_S^2}
+\end{align*}
+
+$$u_{P_{100}}=0.56\,\rm W$$
+$$u_{P_{120}}=0.56\,\rm W$$
+
+According to Table \ref{tab-1},
+
+$$u_I=1.5\%I+0.1\,\rm mA$$
+$$u_U=0.5\%U+0.01\,\rm V$$
+
+$P$ can be calculated by the equation $P=UI$. Therefore its uncertainty $u_P$ is found by applying the uncertainty propagation formula
+
+\begin{align*}
+u_P&=\sqrt{\left(\frac{\partial P}{\partial U}\right)^2u_U^2+\left(\frac{\partial P}{\partial I}\right)^2u_{I}^2}\\
+&=\sqrt{I^2u_U^2+U^2u_I^2}
+\end{align*}
+
+$R$ can be calculated by the equation $R=\frac{U}{I}$. Therefore its uncertainty $u_R$ is found by applying the uncertainty propagation formula
+
+\begin{align*}
+u_R&=\sqrt{\left(\frac{\partial R}{\partial U}\right)^2u_U^2+\left(\frac{\partial R}{\partial I}\right)^2u_{I}^2}\\
+&=\sqrt{\left(\frac{1}{I}\right)^2u_U^2+\left(\frac{U}{I^2}\right)^2u_I^2}
+\end{align*}
+
+$FF$ can be calculated by the equation $FF=\frac{P_m}{P_{c}}$. Therefore its uncertainty $u_{FF}$ is found by applying the uncertainty propagation formula
+
+\begin{align*}
+u_{FF}&=\sqrt{\left(\frac{\partial FF}{\partial P_m}\right)^2u_{P_m}^2+\left(\frac{\partial FF}{\partial P_{c}}\right)^2u_{P_{c}}^2}\\
+&=\sqrt{\left(\frac{1}{P_{c}}\right)^2u_{P_m}^2+\left(\frac{P_m}{{P_{c}}^2}\right)^2u_{P_{c}}^2}
+\end{align*}
+
+$\eta$ can be calculated by the equation $\eta=\frac{P_m}{P_{in}}$. Therefore its uncertainty $u_\eta$ is found by applying the uncertainty propagation formula
+
+\begin{align*}
+u_\eta&=\sqrt{\left(\frac{\partial \eta}{\partial P_m}\right)^2u_{P_m}^2+\left(\frac{\partial \eta}{\partial P_{in}}\right)^2u_{P_{in}}^2}\\
+&=\sqrt{\left(\frac{1}{P_{in}}\right)^2u_{P_m}^2+\left(\frac{P_m}{{P_{in}}^2}\right)^2u_{P_{in}}^2}
+\end{align*}
+
+\section{Conclusion}
+
+In this experiment, we measured the power supplied by the source and the power absorbed by the solar cells.\\
+
+We found some properties of the solar cell by determine the values of
+$I_{sc}$, $V_{oc}$, $P_m$, $I_m$, $V_m$, $R_m$, $FF$, and $\eta$.\\
+
+We also plotted the I-V characteristics curve and the relation between power, voltage and resistance of the solar cell.\\
+
+We use series and parallel method to connect two solar cells together and find that in a series circuit, the voltage superposed and in a parallel circuit the current superposed.\\
+
+According the the value of $\eta$, we found that the efficiency of solar cell is very low.
+
+\section{Reference}
+
+\begin{enumerate}[(a)]
+	\item
+	Qin Tian, Han Xugen, Zheng Huan, Mateusz Krzyzosiak, VP241 Exercise 3, Solar Cells: I-V Characteristics, based on materials provided by the Department of Physics, Shanghai Jiaotong University.
+\end{enumerate}
+
+\section{Data sheet}
+
+The Data sheet is attached at the end of the report.
+
+\end{document}

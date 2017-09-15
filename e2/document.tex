@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage[colorlinks,urlcolor=black,linkcolor=black]{hyperref}
+\setlength{\parindent}{2em}
+\begin{document}
+
+
+
+\section{Theoretical Background}
+The objective of this exercise is to study the principle of the Hall effect and its applications by using a Hall probe. In particular, it will be verified that the Hall voltage is proportional to the magnetic field. Furthermore, the sensitivity of an integrated Hall probe will be studied by calculating the magnetic field at the center of a solenoid, and the magnetic field distribution along the axis of the solenoid will be measured and compared with the corresponding theoretical curve.
+\subsection{Hall Effect}
+Put a conducting sheet in a magnetic field, then the plane of the sheet is perpendicular to the direction of the magnetic field \textbf{B} (Figure 1). When the electric current I passes through the sheet in the direction shown
+in Figure 1, an electric potential difference between the sides $ a $ and $ b $ of the sheet is generated. The corresponding electric field is perpendicular to both the direction of the current and the direction of the magnetic field. This effect is known as the Hall effect, and the electric potential difference is called the Hall voltage $ U_H $.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{th}
+	\caption{The principle of the Hall effect.}
+\end{figure}
+Microscopically, the Hall effect is caused by the Lorentz force, that is a force acting on charges moving in a magnetic field. The Lorentz force $ F_B $ leads to the deflection of the moving charges, and their accumulation on one side of the sheet, which in turn increases the magnitude of the transverse electric field $ E_H $. Due to this field, there is an electric force $ F_E $ acting upon the charges, and since $ F_B $ and $ F_E $ act in opposite directions, a balance is eventually reached and $ U_H $ stabilizes.
+
+When the external magnetic field is not too strong, the Hall voltage is proportional to both the current and the magnitude of the magnetic field, and inversely proportional to the thickness of the sheet $ d $
+\begin{equation}
+	 U_H=R_H\dfrac{IB}{d}=KIB
+\end{equation}
+where $ R_H $ is the so-called Hall coefficient and $ K=R_H/d=K_H/I $, where $ K_H $ is the so-called sensitivity of the Hall element.
+
+\subsection{Integrated Hall Probe}
+The magnitude of the magnetic field can be found by measuring the Hall voltage with a Hall probe when the sensitivity $ K_H $ and the current I are fixed. Since the Hall voltage is usually very small, it should be amplified before the measurement.
+
+Silicon can be used to design both the Hall probe and the integrated circuits, so it is convenient to arrange the Hall probe and the electric circuits into a single device. Such a device is called an integrated Hall probe.
+
+The integrated Hall probe SS495A consists of a Hall sensor, an amplifier, and a voltage compensator (Figure 2). The output voltage U can be read ignoring the residual voltage. The working voltage $ U_S = 5 V $, and the output voltage $ U_0 $ is approximately $ 2.5 V $ when the magnetic field is zero. The relation between the output voltage U and the magnitude of the magnetic field is
+\begin{equation}
+	B=\dfrac{U-U_0}{K_H}
+\end{equation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{set}
+	\caption{The integrated Hall probe SS495A (left). The relation between the output voltage $ U $ and the magnitude of the magnetic field $ B $ (right).}
+\end{figure}
+The magnetic field distribution on the axis of a single layer solenoid can be calculated from the following formula
+\begin{equation}
+	B(x)=\mu_0\dfrac{N}{L}I_M\begin{Bmatrix}
+	\dfrac{L+2x}{2[D^2+(L+2x)^2]^{\frac{1}{2}}}+\dfrac{L-2x}{2[D^2+(L-2x)^2]^{\frac{1}{2}}}
+	\end{Bmatrix}=C(x)I_M
+\end{equation}
+where $ N $ is the number of turns of the solenoid, $ L $ is its length, $ I_M $ is the current through the solenoid wire, and $ D $ is the solenoid's diameter. The magnetic permeability of vacuum is $ \mu_0=4\pi\times10^{-7}H/m $
+
+The solenoid used in this exercise has ten layers, and the magnetic field $ B(x) $ for each layer can be calculated using Eq. (3). Then the net magnetic on the axis of the solenoid can be found by adding contributions due to all layers. The theoretical value of the magnetic field inside the solenoid with $ I_M = 0.1 A $ is given in Table 1.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{cc||cc}
+		\toprule
+		x[cm]     & B[mT]      &    x[cm]   & B[mT] \\
+		\midrule
+		$ \pm $0.0     & 1.4366  & $\pm$8.0     & 1.4057  \\
+		$\pm$1.0     & 1.4363  & $\pm$9.0     & 1.3856  \\
+		$\pm$2.0     & 1.4356  & $\pm$10.0    & 1.3478  \\
+		$\pm$3.0     & 1.4343  & $\pm$11.0    & 1.2685  \\
+		$\pm$4.0     & 1.4323  & $\pm$11.5  & 1.1963  \\
+		$\pm$5.0     & 1.4292  & $\pm$12.0    & 1.0863  \\
+		$\pm$6.0     & 1.4245  & $\pm$12.5  & 0.9261  \\
+		$\pm$7.0     & 1.4173  & $\pm$13.0    & 0.7233  \\
+		\bottomrule
+	\end{tabular}%
+	\caption{Theoretical value of the magnetic field inside the solenoid.}
+\end{table}%
+\section{Apparatus}
+The experimental setup shown in Figure 5 consists of an integrated Hall probe SS495A (see Figure 4) with $ K_H = 31.25 \pm 1.25 V/T $ or $ K_H = 3.125 \pm 0.125 mV/G $, a solenoid, a power supply, a voltmeter, a DC voltage divider, and a set of connecting wires.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{app}
+	\caption{Measurement setup.}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{app2}
+	\caption{Integrated Hall probe SS495A.}
+\end{figure}
+\section{Procedure}
+\subsection{Relation Between Sensitivity $ K_H $ and Working Voltage $ U_S $}
+\begin{enumerate}
+	\item Place the integrated Hall probe at the center of the solenoid. Set the working voltage at 5 V and measure the output voltage $ U_0 (I_M = 0) $ and $ U (I_M = 250 mA) $. Take the theoretical value of $ B(x = 0) $ from Table 1 and calculate the sensitivity of the probe $ K_H $ by using Eq. (2).\
+	\item Measure $ K_H $ for different values of $ U_S $ (from $ 2.8 V $ to $ 10 V $). Calculate $ K_H/U_S $ and plot the curve $ K_H/U_S vs. U_S $.
+\end{enumerate}
+\subsection{Relation Between Output Voltage $ U $ and Magnetic Field $ B $}
+\begin{enumerate}
+	\item With $ B=0, U_S=5 V, $ connect the $ 2.4 \sim 2.6 V $ output terminal of the DC voltage divider and the negative port of the voltmeter. Adjust the voltage until $ U_0 = 0 $.
+	\item Place the integrated Hall probe at the center of the solenoid and measure the output voltage $ U $ for different values of $ I_M $ ranging from 0 to $ 500 mA $, with intervals of $ 50 mA $.
+	\item Explain the relation between $ B(x = 0) $ and the Hall voltage $ U_H $. Pay attention to the fact that the output voltage U is the amplified signal from $ U_H $. The theoretical value of $ B(x = 0) $ can be found from Table 1.
+	\item Plot the curve $ U vs. B $ and find the sensitivity $ K_H $ by a linear fit (use a computer). Compare the value you obtained with the theoretical value in given in the Apparatus section.
+\end{enumerate}
+\subsection{Magnetic Field Distribution Inside the Solenoid}
+\begin{enumerate}
+	\item Measure the magnetic field distribution along the axis of the solenoid for $ I_M = 250 mA $, record the output voltage U and the corresponding position $ x $. Then find $ B = B(x) $. (Use the value of $ K_H $ found in the previous part of the experiment).
+	\item Use a computer to plot the theoretical and the experimental curve showing the magnetic field distribution inside the solenoid. Use dots for the data measured and a solid line for the theoretical curve. The origin of the plot should be at the center of the solenoid.
+\end{enumerate}
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,31 @@
+fid=fopen(['table.tex'],'w+');
+UR=[-213.0 -150.0 -100.0 -50.0 0.0 50.0 72.5 100.0 150.0 212.0 150.0 100.0 50.0 0.0 -44.5 -61.0 -91.0 -150.0]/1000;
+UC=[139.0 131.5 123.0 110.0 90.0 53.0 0.0 -80.5 -116.5 -134.0 -127.5 -118.0 -104.5 -82.5 -43.5 0.0 84.5 121.0]/1000;
+N1=100;N2=100;
+R1=10.17;R2=992.9;
+L=3.61e-2;S=1.25e-5;C=4.334;
+H=UR.*N1./R1./L;
+B=-UC.*R2.*C./N2./S;
+uR1=0.01;uR2=0.1;uL=1e-4;uS=1e-7;uC=0.001;
+uUR=0.5e-3;uUC=uUR;
+uH=N1.*sqrt((uUR/R1/L)^2+(UR.*uR1./R1^2./L).^2+(UR.*uL./R1./L^2).^2);
+uB=1/N2.*sqrt((C.*UC.*uR2./S).^2+(R2.*UC.*uC./S).^2+(R2.*C.*uUC./S).^2+(R2.*C.*UC*uS./S^2).^2);
+plot(H,B,'.');
+B=B./1000;uB=uB./1000;
+saveas(gcf,'fig.png');
+fprintf(fid,'\\begin{table}[!h]\n');
+fprintf(fid,'\\begin{center}\n');
+fprintf(fid,'\\begin{tabular}{|c|c|c|}\n');
+fprintf(fid,'\\hline\n');
+fprintf(fid,'No & H [T] & B [$1\\times10^3$ T] \\\\\n');
+fprintf(fid,'\\hline\n');
+for i=1:length(H)
+    fprintf(fid,'%d\t&\t$%.2f\\pm\t%.2f$\t&\t$%.2f\\pm\t%.2f$\t\\\\\n',i,H(i),uH(i),B(i),uB(i));
+    fprintf(fid,'\\hline\n');
+end
+fprintf(fid,'\\end{tabular}\n');
+fprintf(fid,'\\caption{The data of H and B.}\n');
+fprintf(fid,'\\label{tab-3}\n');
+fprintf(fid,'\\end{center}\n');
+fprintf(fid,'\\end{table}\n');
+fclose(fid);
